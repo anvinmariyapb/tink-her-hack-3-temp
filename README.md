@@ -5,11 +5,12 @@
 ### Anvin Mariya P B
 
 
-### Team Members
-- Member 1: Anvin Mariya P B
+### Individual project
+Anvin Mariya P B
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://github.com/anvinmariyapb/tink-her-hack-3-temp.git
+
 
 ### Project Description
 Home Fix is designed to be a reliable, easy-to-use platform that connects people with trusted local service providers for tasks like plumbing, gardening, carpentry, and electrical work. Whether you're in need of a quick fix or a major home project, the app makes it simple to find the right professional.
@@ -19,17 +20,17 @@ Many people struggle to find reliable and skilled service providers for home rep
 ### The Solution
 Home Fix is here to make your life easier and your home repairs hassle-free! Say goodbye to endless searches for reliable plumbers, electricians, or gardeners. With just a few clicks, you can find a trusted professional in your area, schedule a service, and even track progress in real-time. 
 
-## Technical Details
+
 ### Technologies/Components Used
 For Software:
--Languages : Python, HTML, CSS, MySQL
+Languages : Python, HTML, CSS, MySQL
 Frameworks : Flask
 Libraries : Werkzeug (for password hashing), Pandas (for data handling)
 Tools :Visual Studio Code (IDE), MySQ Command Line(for database management)
 
 
 ### Implementation
-For Software: For Software, Home Fix is developed using Flask, a lightweight Python web framework, to handle backend logic and user authentication. MySQL is used as the database to store user details, service requests, and contact messages. The frontend is built using HTML and CSS for a simple and responsive interface. Werkzeug ensures secure password hashing. The application is developed and tested using Git VS Code, and MySQL Command Line, ensuring smooth deployment and scalability.
+For Software: For Software, Home Fix is developed using Flask, a lightweight Python web framework, to handle backend logic and user authentication. MySQL is used as the database to store user details, service requests, and contact messages. The frontend uses HTML and CSS for a simple and responsive interface. Werkzeug ensures secure password hashing. The application is developed and tested using Git VS Code, and MySQL Command Line, ensuring smooth deployment and scalability.
 # Installation
 git clone <repository_url>
 cd home-fix
@@ -54,59 +55,27 @@ python app.py
 
 http://127.0.0.1:5000
 
+Home Page
+![Screenshot 2025-02-02 224423](https://github.com/user-attachments/assets/41aa651b-a271-4081-9631-1ece2a3d1e0d)
 
-### Project Documentation
-For Software:
+Login Page 
+![Screenshot 2025-02-02 103127](https://github.com/user-attachments/assets/a0b0ae40-8ab6-4247-a24b-e16026359bb3)
 
-# Screenshots (Add at least 3)
+Searching services
+![Screenshot 2025-02-02 103147](https://github.com/user-attachments/assets/6aed8613-9a40-4136-841c-2d70868d65c4)
 
-![Home Page](\Screenshot 2025-02-02 103107.png)
+Directed Page
+![Screenshot 2025-02-02 103208](https://github.com/user-attachments/assets/4094afb5-15d7-45e0-927e-679a78debe2e)
 
+Fixing Service
+![Screenshot 2025-02-02 103216](https://github.com/user-attachments/assets/7d662527-c0e2-4e77-b5b6-843aef286ab3)
 
-![](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+Contact Us
+![Screenshot 2025-02-02 103328](https://github.com/user-attachments/assets/e3986cc0-b581-4881-9662-2b3d8745b51e)
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Team](Add photo of your team here)
-
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+https://drive.google.com/drive/u/0/my-drive
 
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
----
 Made with ❤️ at TinkerHub
