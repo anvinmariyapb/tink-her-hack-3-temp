@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ service_name }} - Home Fix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>{{ service_name }} Services</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="service-details">
+        <!-- Service Overview -->
+        <section class="service-overview">
+            <h2>What We Offer</h2>
+            <p>{{ service_name }} is a comprehensive service designed to help you with all your needs. Whether it's plumbing, electrical, home cleaning, or landscaping, our skilled professionals ensure high-quality work at affordable rates. Get reliable, timely service from our trusted experts.</p>
+        </section>
+
+        <!-- Service Benefits -->
+        <section class="service-benefits">
+            <h3>Why Choose Our {{ service_name }} Service?</h3>
+            <ul>
+                <li><strong>Experienced Professionals:</strong> Our providers have years of experience and offer expert solutions.</li>
+                <li><strong>Quality Guarantee:</strong> We ensure high-quality work with complete customer satisfaction.</li>
+                <li><strong>Affordable Pricing:</strong> We offer competitive prices to ensure you get value for your money.</li>
+                <li><strong>Convenient Booking:</strong> Schedule your service at your convenience, with easy online booking.</li>
+            </ul>
+        </section>
+
+        <!-- Service Providers -->
+        <section class="service-providers">
+            <h3>Our Available {{ service_name }} Providers</h3>
+            {% if service_providers %}
+                <ul class="service-provider-list">
+                    {% for provider in service_providers %}
+                        <li class="service-provider">
+                            <h4>{{ provider.name }}</h4>
+                            <p><strong>Email:</strong> {{ provider.email }}</p>
+                            <p><strong>About:</strong> {{ provider.message }}</p>
+                            <div class="provider-rating">
+                                <strong>Rating:</strong> 
+                                <span class="rating">{{ provider.rating | default('No rating') }}</span> 
+                                <!-- Example: provider.rating could be added in your contacts table -->
+                            </div>
+                            <a href="/contact" class="contact-btn">Contact This Provider</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No service providers found for this category.</p>
+            {% endif %}
+        </section>
+
+        <!-- Service FAQ -->
+        <section class="service-faq">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <h4>How do I book a {{ service_name }} service?</h4>
+                <p>You can easily book a {{ service_name }} service through our online platform or by contacting our customer support team.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What happens if I am not satisfied with the service?</h4>
+                <p>If you're not completely satisfied with the service, we offer a satisfaction guarantee and will work with you to resolve any issues.</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h3>Ready to Get Started?</h3>
+            <p>If you're looking for reliable, professional {{ service_name }} services, look no further. Our experts are ready to assist you with all your needs!</p>
+            <a href="/contact" class="cta-btn">Contact Us Now</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Home Fix. All rights reserved.</p>
+    </footer>
+</body>
+</html>

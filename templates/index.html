@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Fix - Your Local Service Provider</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("{{ url_for('static', filename='images/images.png') }}") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* Overlay for Background Image */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: -1;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #70c373, #2E7D32); /* Gradient Green */
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo h1 {
+            font-size: 3rem;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Top Banner Section */
+        .top-banner {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .top-banner img {
+            max-height: 150px;
+            object-fit: contain;
+            margin: 0 10px;
+        }
+
+        /* Intro Section */
+        .intro {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .intro h1 {
+            font-size: 3.5rem;
+            color: darkgreen;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .feature {
+            text-align: center;
+            width: 300px;
+            margin: 0 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature img {
+            max-width: 100px;
+            margin-bottom: 15px;
+        }
+
+        .feature h4 {
+            font-size: 1.5rem;
+            color: darkgreen;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #2E7D32;
+            padding: 15px 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <h1>Home Fix</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                {% if 'username' not in session %}
+                    <li><a href="/login">Login</a></li>  <!-- Moved Login to second position for users who aren't logged in -->
+                {% endif %}
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                {% if 'username' in session %}
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    
+
+    <main>
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <p class="success">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Top Banner Section -->
+        <section class="top-banner">
+            <img src="{{ url_for('static', filename='images/image7.svg') }}" alt="Left Image">
+            <img src="{{ url_for('static', filename='images/image9.svg') }}" alt="Center Image">
+            <img src="{{ url_for('static', filename='images/image8.svg') }}" alt="Right Image">
+        </section>
+
+        <!-- Intro Section -->
+        <section class="intro">
+            <h1>Why Choose Us?</h1>
+            <div class="features">
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/image4.svg') }}" alt="Reliable Experts">
+                    <h4>Reliable Service</h4>
+                    <p>Experienced and trustworthy service providers ready to help with your home needs.</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/image3.svg') }}" alt="Quality Services">
+                    <h4>Quality Services</h4>
+                    <p>We ensure quality work with top-notch materials and craftsmanship.</p>
+                </div>
+                <div class="feature">
+                    <img src="{{ url_for('static', filename='images/image5.svg') }}" alt="Affordable Pricing">
+                    <h4>Affordable Pricing</h4>
+                    <p>Get great value for your home service needs without breaking the bank.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Home Fix. All rights reserved.</p>
+    </footer>
+</body>
+</html>

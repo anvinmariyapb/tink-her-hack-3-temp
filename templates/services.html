@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Home Fix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px 0;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+
+        /* Top Banner Styling */
+        .top-banner img {
+            width: 18%;
+            margin: 15px;
+        }
+
+        /* Services as Horizontal Bars */
+        .service-list ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .service-list ul li {
+            background: white;
+            padding: 20px;
+            margin: 15px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .service-list ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #333;
+            font-size: 1.4rem;
+        }
+
+        /* Features Section as Boxes */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Home Fix Services</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="top-banner">
+        <img src="{{ url_for('static', filename='images/image10.svg') }}" alt="Workers Illustration">
+        <img src="{{ url_for('static', filename='images/image7.svg') }}" alt="Left Image">
+        <img src="{{ url_for('static', filename='images/image9.svg') }}" alt="Center Image">
+        <img src="{{ url_for('static', filename='images/image8.svg') }}" alt="Right Image">
+        <img src="{{ url_for('static', filename='images/image11.svg') }}" alt="Right Image">
+    </section>
+
+    <main>
+        <section class="service-list">
+            <h2>What We Offer</h2>
+            <ul>
+                {% for service in services %}
+                    <li>
+                        <a href="{{ url_for('service_detail', service_id=service.id) }}">{{ service.icon }} {{ service.name }}</a>
+                        <p>{{ service.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h4>👨‍🔧 Experienced Professionals</h4>
+                <p>Highly trained and experienced professionals dedicated to quality service.</p>
+            </div>
+            <div class="feature">
+                <h4>🏗️ Quality Materials</h4>
+                <p>We use only top-quality materials to ensure durability.</p>
+            </div>
+            <div class="feature">
+                <h4>💰 Affordable Pricing</h4>
+                <p>Competitive pricing for the best value in home services.</p>
+            </div>
+            <div class="feature">
+                <h4>⏳ Timely Service</h4>
+                <p>We ensure your work is completed on schedule.</p>
+            </div>
+            <div class="feature">
+                <h4>📞 24/7 Support</h4>
+                <p>Our support team is always available to help you.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Home Fix. All rights reserved.</p>
+    </footer>
+</body>
+</html>
